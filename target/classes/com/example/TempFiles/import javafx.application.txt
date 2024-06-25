@@ -1,0 +1,304 @@
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+
+public class ExamSelection extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        // Create UI elements
+        Label title = new Label("Select a Course");
+        title.setFont(new Font("Arial", 24));
+        title.setTextFill(Color.TEAL);
+
+        Label selectExamLabel = new Label("Select Exam");
+        Label enterScoreLabel = new Label("Enter Score");
+
+        // Create radio buttons for exam selection
+        RadioButton jeeMain = new RadioButton("JEE Main");
+        RadioButton jeeAdvanced = new RadioButton("JEE Advanced");
+        RadioButton comedKUget = new RadioButton("COMEDK UGET");
+        RadioButton bitsat = new RadioButton("BITSAT");
+        RadioButton upcat = new RadioButton("UPCAT");
+        RadioButton mhtCet = new RadioButton("MHT CET");
+        RadioButton wbjee = new RadioButton("WBJEE");
+        RadioButton tnea = new RadioButton("TNEA");
+        RadioButton keam = new RadioButton("KEAM");
+        RadioButton kcet = new RadioButton("KCET");
+        RadioButton ojee = new RadioButton("OJEE");
+        RadioButton apEamcet = new RadioButton("AP EAMCET");
+        RadioButton mpBe = new RadioButton("MP BE");
+        RadioButton tsEamcet = new RadioButton("TS EAMCET");
+        RadioButton ipuCet = new RadioButton("IPU CET (B.E. / B.Tech)");
+        RadioButton ptuBtech = new RadioButton("PTU BTech");
+        RadioButton gujcet = new RadioButton("GUJCET");
+        RadioButton viteee = new RadioButton("VITEEE");
+        RadioButton srmjeee = new RadioButton("SRMJEEE");
+        RadioButton jacChandigarh = new RadioButton("JAC Chandigarh");
+        RadioButton jacDelhi = new RadioButton("JAC Delhi");
+        RadioButton cgPet = new RadioButton("CG PET");
+        RadioButton hstes = new RadioButton("HSTES");
+        RadioButton cusatCat = new RadioButton("CUSAT CAT");
+        RadioButton dasaUg = new RadioButton("DASA UG");
+        RadioButton met = new RadioButton("MET");
+        RadioButton ipuCetBio = new RadioButton("IPU CET (BTech Bio-Technology)");
+        RadioButton imuCet = new RadioButton("IMUCET");
+        RadioButton gurugramUniversity = new RadioButton("Gurugram University");
+        RadioButton cuet = new RadioButton("CUET");
+        RadioButton uptac = new RadioButton("UPTAC");
+        RadioButton biharUgeac = new RadioButton("Bihar UGEAC");
+
+        // Group radio buttons
+        ToggleGroup examGroup = new ToggleGroup();
+        jeeMain.setToggleGroup(examGroup);
+        jeeAdvanced.setToggleGroup(examGroup);
+        comedKUget.setToggleGroup(examGroup);
+        bitsat.setToggleGroup(examGroup);
+        upcat.setToggleGroup(examGroup);
+        mhtCet.setToggleGroup(examGroup);
+        wbjee.setToggleGroup(examGroup);
+        tnea.setToggleGroup(examGroup);
+        keam.setToggleGroup(examGroup);
+        kcet.setToggleGroup(examGroup);
+        ojee.setToggleGroup(examGroup);
+        apEamcet.setToggleGroup(examGroup);
+        mpBe.setToggleGroup(examGroup);
+        tsEamcet.setToggleGroup(examGroup);
+        ipuCet.setToggleGroup(examGroup);
+        ptuBtech.setToggleGroup(examGroup);
+        gujcet.setToggleGroup(examGroup);
+        viteee.setToggleGroup(examGroup);
+        srmjeee.setToggleGroup(examGroup);
+        jacChandigarh.setToggleGroup(examGroup);
+        jacDelhi.setToggleGroup(examGroup);
+        cgPet.setToggleGroup(examGroup);
+        hstes.setToggleGroup(examGroup);
+        cusatCat.setToggleGroup(examGroup);
+        dasaUg.setToggleGroup(examGroup);
+        met.setToggleGroup(examGroup);
+        ipuCetBio.setToggleGroup(examGroup);
+        imuCet.setToggleGroup(examGroup);
+        gurugramUniversity.setToggleGroup(examGroup);
+        cuet.setToggleGroup(examGroup);
+        uptac.setToggleGroup(examGroup);
+        biharUgeac.setToggleGroup(examGroup);
+
+        // Create buttons
+        Button nextButton = new Button("Next");
+
+        // Load images
+        Image jeeMainImage = new Image(getClass().getResourceAsStream("jee_main.png"));
+        Image jeeAdvancedImage = new Image(getClass().getResourceAsStream("jee_advanced.png"));
+        Image comedKUgetImage = new Image(getClass().getResourceAsStream("comedk_uget.png"));
+        Image bitsatImage = new Image(getClass().getResourceAsStream("bitsat.png"));
+        Image upcatImage = new Image(getClass().getResourceAsStream("upcat.png"));
+        Image mhtCetImage = new Image(getClass().getResourceAsStream("mht_cet.png"));
+        Image wbjeeImage = new Image(getClass().getResourceAsStream("wbjee.png"));
+        Image tneaImage = new Image(getClass().getResourceAsStream("tnea.png"));
+        Image keamImage = new Image(getClass().getResourceAsStream("keam.png"));
+        Image kcetImage = new Image(getClass().getResourceAsStream("kcet.png"));
+        Image ojeeImage = new Image(getClass().getResourceAsStream("ojee.png"));
+        Image apEamcetImage = new Image(getClass().getResourceAsStream("ap_eamcet.png"));
+        Image mpBeImage = new Image(getClass().getResourceAsStream("mp_be.png"));
+        Image tsEamcetImage = new Image(getClass().getResourceAsStream("ts_eamcet.png"));
+        Image ipuCetImage = new Image(getClass().getResourceAsStream("ipu_cet.png"));
+        Image ptuBtechImage = new Image(getClass().getResourceAsStream("ptu_btech.png"));
+        Image gujcetImage = new Image(getClass().getResourceAsStream("gujcet.png"));
+        Image viteeeImage = new Image(getClass().getResourceAsStream("viteee.png"));
+        Image srmjeeeImage = new Image(getClass().getResourceAsStream("srmjeee.png"));
+        Image jacChandigarhImage = new Image(getClass().getResourceAsStream("jac_chandigarh.png"));
+        Image jacDelhiImage = new Image(getClass().getResourceAsStream("jac_delhi.png"));
+        Image cgPetImage = new Image(getClass().getResourceAsStream("cg_pet.png"));
+        Image hstesImage = new Image(getClass().getResourceAsStream("hstes.png"));
+        Image cusatCatImage = new Image(getClass().getResourceAsStream("cusat_cat.png"));
+        Image dasaUgImage = new Image(getClass().getResourceAsStream("dasa_ug.png"));
+        Image metImage = new Image(getClass().getResourceAsStream("met.png"));
+        Image ipuCetBioImage = new Image(getClass().getResourceAsStream("ipu_cet_bio.png"));
+        Image imuCetImage = new Image(getClass().getResourceAsStream("imu_cet.png"));
+        Image gurugramUniversityImage = new Image(getClass().getResourceAsStream("gurugram_university.png"));
+        Image cuetImage = new Image(getClass().getResourceAsStream("cuet.png"));
+        Image uptacImage = new Image(getClass().getResourceAsStream("uptac.png"));
+        Image biharUgeacImage = new Image(getClass().getResourceAsStream("bihar_ugeac.png"));
+
+        // Create image views
+        ImageView jeeMainImageView = new ImageView(jeeMainImage);
+        jeeMainImageView.setFitWidth(60);
+        jeeMainImageView.setFitHeight(60);
+        ImageView jeeAdvancedImageView = new ImageView(jeeAdvancedImage);
+        jeeAdvancedImageView.setFitWidth(60);
+        jeeAdvancedImageView.setFitHeight(60);
+        ImageView comedKUgetImageView = new ImageView(comedKUgetImage);
+        comedKUgetImageView.setFitWidth(60);
+        comedKUgetImageView.setFitHeight(60);
+        ImageView bitsatImageView = new ImageView(bitsatImage);
+        bitsatImageView.setFitWidth(60);
+        bitsatImageView.setFitHeight(60);
+        ImageView upcatImageView = new ImageView(upcatImage);
+        upcatImageView.setFitWidth(60);
+        upcatImageView.setFitHeight(60);
+        ImageView mhtCetImageView = new ImageView(mhtCetImage);
+        mhtCetImageView.setFitWidth(60);
+        mhtCetImageView.setFitHeight(60);
+        ImageView wbjeeImageView = new ImageView(wbjeeImage);
+        wbjeeImageView.setFitWidth(60);
+        wbjeeImageView.setFitHeight(60);
+        ImageView tneaImageView = new ImageView(tneaImage);
+        tneaImageView.setFitWidth(60);
+        tneaImageView.setFitHeight(60);
+        ImageView keamImageView = new ImageView(keamImage);
+        keamImageView.setFitWidth(60);
+        keamImageView.setFitHeight(60);
+        ImageView kcetImageView = new ImageView(kcetImage);
+        kcetImageView.setFitWidth(60);
+        kcetImageView.setFitHeight(60);
+        ImageView ojeeImageView = new ImageView(ojeeImage);
+        ojeeImageView.setFitWidth(60);
+        ojeeImageView.setFitHeight(60);
+        ImageView apEamcetImageView = new ImageView(apEamcetImage);
+        apEamcetImageView.setFitWidth(60);
+        apEamcetImageView.setFitHeight(60);
+        ImageView mpBeImageView = new ImageView(mpBeImage);
+        mpBeImageView.setFitWidth(60);
+        mpBeImageView.setFitHeight(60);
+        ImageView tsEamcetImageView = new ImageView(tsEamcetImage);
+        tsEamcetImageView.setFitWidth(60);
+        tsEamcetImageView.setFitHeight(60);
+        ImageView ipuCetImageView = new ImageView(ipuCetImage);
+        ipuCetImageView.setFitWidth(60);
+        ipuCetImageView.setFitHeight(60);
+        ImageView ptuBtechImageView = new ImageView(ptuBtechImage);
+        ptuBtechImageView.setFitWidth(60);
+        ptuBtechImageView.setFitHeight(60);
+        ImageView gujcetImageView = new ImageView(gujcetImage);
+        gujcetImageView.setFitWidth(60);
+        gujcetImageView.setFitHeight(60);
+        ImageView viteeeImageView = new ImageView(viteeeImage);
+        viteeeImageView.setFitWidth(60);
+        viteeeImageView.setFitHeight(60);
+        ImageView srmjeeeImageView = new ImageView(srmjeeeImage);
+        srmjeeeImageView.setFitWidth(60);
+        srmjeeeImageView.setFitHeight(60);
+        ImageView jacChandigarhImageView = new ImageView(jacChandigarhImage);
+        jacChandigarhImageView.setFitWidth(60);
+        jacChandigarhImageView.setFitHeight(60);
+        ImageView jacDelhiImageView = new ImageView(jacDelhiImage);
+        jacDelhiImageView.setFitWidth(60);
+        jacDelhiImageView.setFitHeight(60);
+        ImageView cgPetImageView = new ImageView(cgPetImage);
+        cgPetImageView.setFitWidth(60);
+        cgPetImageView.setFitHeight(60);
+        ImageView hstesImageView = new ImageView(hstesImage);
+        hstesImageView.setFitWidth(60);
+        hstesImageView.setFitHeight(60);
+        ImageView cusatCatImageView = new ImageView(cusatCatImage);
+        cusatCatImageView.setFitWidth(60);
+        cusatCatImageView.setFitHeight(60);
+        ImageView dasaUgImageView = new ImageView(dasaUgImage);
+        dasaUgImageView.setFitWidth(60);
+        dasaUgImageView.setFitHeight(60);
+        ImageView metImageView = new ImageView(metImage);
+        metImageView.setFitWidth(60);
+        metImageView.setFitHeight(60);
+        ImageView ipuCetBioImageView = new ImageView(ipuCetBioImage);
+        ipuCetBioImageView.setFitWidth(60);
+        ipuCetBioImageView.setFitHeight(60);
+        ImageView imuCetImageView = new ImageView(imuCetImage);
+        imuCetImageView.setFitWidth(60);
+        imuCetImageView.setFitHeight(60);
+        ImageView gurugramUniversityImageView = new ImageView(gurugramUniversityImage);
+        gurugramUniversityImageView.setFitWidth(60);
+        gurugramUniversityImageView.setFitHeight(60);
+        ImageView cuetImageView = new ImageView(cuetImage);
+        cuetImageView.setFitWidth(60);
+        cuetImageView.setFitHeight(60);
+        ImageView uptacImageView = new ImageView(uptacImage);
+        uptacImageView.setFitWidth(60);
+        uptacImageView.setFitHeight(60);
+        ImageView biharUgeacImageView = new ImageView(biharUgeacImage);
+        biharUgeacImageView.setFitWidth(60);
+        biharUgeacImageView.setFitHeight(60);
+
+        // Create GridPane for exam images
+        GridPane examGrid = new GridPane();
+        examGrid.setHgap(10);
+        examGrid.setVgap(10);
+        examGrid.setAlignment(Pos.CENTER);
+        examGrid.setPadding(new Insets(20, 20, 20, 20));
+        examGrid.add(jeeMainImageView, 0, 0);
+        examGrid.add(jeeAdvancedImageView, 1, 0);
+        examGrid.add(comedKUgetImageView, 2, 0);
+        examGrid.add(bitsatImageView, 3, 0);
+        examGrid.add(upcatImageView, 0, 1);
+        examGrid.add(mhtCetImageView, 1, 1);
+        examGrid.add(wbjeeImageView, 2, 1);
+        examGrid.add(tneaImageView, 3, 1);
+        examGrid.add(keamImageView, 0, 2);
+        examGrid.add(kcetImageView, 1, 2);
+        examGrid.add(ojeeImageView, 2, 2);
+        examGrid.add(apEamcetImageView, 3, 2);
+        examGrid.add(mpBeImageView, 0, 3);
+        examGrid.add(tsEamcetImageView, 1, 3);
+        examGrid.add(ipuCetImageView, 2, 3);
+        examGrid.add(ptuBtechImageView, 3, 3);
+        examGrid.add(gujcetImageView, 0, 4);
+        examGrid.add(viteeeImageView, 1, 4);
+        examGrid.add(srmjeeeImageView, 2, 4);
+        examGrid.add(jacChandigarhImageView, 3, 4);
+        examGrid.add(jacDelhiImageView, 0, 5);
+        examGrid.add(cgPetImageView, 1, 5);
+        examGrid.add(hstesImageView, 2, 5);
+        examGrid.add(cusatCatImageView, 3, 5);
+        examGrid.add(dasaUgImageView, 0, 6);
+        examGrid.add(metImageView, 1, 6);
+        examGrid.add(ipuCetBioImageView, 2, 6);
+        examGrid.add(imuCetImageView, 3, 6);
+        examGrid.add(gurugramUniversityImageView, 0, 7);
+        examGrid.add(cuetImageView, 1, 7);
+        examGrid.add(uptacImageView, 2, 7);
+        examGrid.add(biharUgeacImageView, 3, 7);
+
+        // Create VBox for exam options
+        VBox examOptions = new VBox(10);
+        examOptions.setAlignment(Pos.CENTER_LEFT);
+        examOptions.setPadding(new Insets(20, 20, 20, 20));
+        examOptions.getChildren().addAll(jeeMain, jeeAdvanced, comedKUget, bitsat, upcat, mhtCet, wbjee, tnea,
+                keam, kcet, ojee, apEamcet, mpBe, tsEamcet, ipuCet, ptuBtech, gujcet, viteee, srmjeee,
+                jacChandigarh, jacDelhi, cgPet, hstes, cusatCat, dasaUg, met, ipuCetBio, imuCet,
+                gurugramUniversity, cuet, uptac, biharUgeac);
+
+        // Create HBox for buttons
+        HBox buttonBox = new HBox(10);
+        buttonBox.setAlignment(Pos.CENTER);
+        buttonBox.setPadding(new Insets(20, 20, 20, 20));
+        buttonBox.getChildren().add(nextButton);
+
+        // Create VBox for main layout
+        VBox root = new VBox(10);
+        root.setAlignment(Pos.TOP_CENTER);
+        root.setPadding(new Insets(20, 20, 20, 20));
+        root.getChildren().addAll(title, selectExamLabel, examOptions, enterScoreLabel, examGrid, buttonBox);
+
+        // Create scene and show stage
+        Scene scene = new Scene(root, 600, 600);
+        primaryStage.setTitle("Exam Selection");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}

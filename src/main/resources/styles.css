@@ -1,0 +1,15 @@
+/* styles.css */
+.menu-bar {
+    -fx-spacing: 1px; /* Adjusts spacing between menu items */
+    -fx-min-width: 150px; /* Sets minimum width for each menu item */
+    -fx-max-width: 550px; /* Sets maximum width for each menu item */
+    -fx-alignment: center; /* Centers text inside menu items */
+    -fx-background-color:#016868;
+}
+
+.menu-bar .menu {
+    -fx-padding: 5px; /* Adds padding inside each menu item */
+    -fx-min-width: 100px; /* Sets minimum width for each menu item */
+    -fx-max-width: 100px; /* Sets maximum width for each menu item */
+    -fx-alignment: center; /* Centers text inside menu items */
+}
